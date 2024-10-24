@@ -1,3 +1,4 @@
+/* Reset básico */
 * {
     margin: 0;
     padding: 0;
@@ -15,6 +16,7 @@ body {
 /* Layout principal do conteúdo */
 .conteudo {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 20px;
@@ -23,22 +25,23 @@ body {
 
 /* Formulário */
 .form-container {
-    flex: 1;
     padding: 20px;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 600px; /* Limita o tamanho do formulário */
-    width: 100%; /* Garante que o formulário ocupe 100% da largura disponível */
+    max-width: 600px;
+    width: 100%;
 }
 
-/* Imagens laterais */
+/* Imagens acima e abaixo do formulário */
 .image-container {
-    flex: 0 0 300px;
+    text-align: center;
+    width: 100%;
 }
 
-.img-esquerda, .img-direita {
+.img {
     max-width: 100%;
+    height: auto;
     border-radius: 10px;
 }
 
@@ -57,13 +60,11 @@ nav {
     margin-right: auto;
 }
 
-/* Estilo da logo */
 .logo {
     height: 40px;
     margin-right: 10px;
 }
 
-/* Estilo do nome do site */
 .site-name {
     font-size: 20px;
     font-weight: bold;
@@ -75,10 +76,12 @@ nav {
     list-style: none;
     display: flex;
 }
+
 #nav li {
     margin-right: 20px;
     position: relative;
 }
+
 #nav a {
     color: white;
     text-decoration: none;
@@ -93,7 +96,12 @@ nav {
     color: white;
 }
 
-/* Ajustes para o dropdown */
+/* Escondendo checkbox */
+#menu-toggle {
+    display: none;
+}
+
+/* Dropdown */
 .dropdown-content {
     display: none;
     flex-direction: column;
@@ -111,7 +119,6 @@ nav {
     display: block;
 }
 
-/* Para garantir que funcione em dispositivos móveis */
 .dropdown-content a {
     color: white;
     padding: 16px;
@@ -146,10 +153,6 @@ nav {
 
     .menu-icon {
         display: block;
-    }
-
-    .image-container {
-        display: none;
     }
 
     .form-container {
