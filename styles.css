@@ -4,7 +4,6 @@
     box-sizing: border-box;
 }
 
-/* Estilos do corpo */
 body {
     font-family: 'Montserrat', sans-serif;
     background-color: rgb(255, 99, 71);
@@ -12,17 +11,15 @@ body {
     line-height: 1.6;
 }
 
-/* Layout principal do conteúdo */
 .conteudo {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 20px;
     padding: 40px;
+    flex-wrap: wrap;
 }
 
-/* Formulário */
 .form-container {
     flex: 1;
     padding: 20px;
@@ -33,11 +30,8 @@ body {
     width: 100%;
 }
 
-/* Imagens */
 .image-container {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 20px;
+    flex: 0 0 300px;
 }
 
 .img-esquerda, .img-direita {
@@ -45,43 +39,41 @@ body {
     border-radius: 10px;
 }
 
-/* Contêiner principal do menu */
 nav {
     display: flex;
     align-items: center;
-    padding: 15px 0;
+    padding: 15px;
     width: 100%;
+    background-color: rgb(255, 99, 71);
 }
 
-/* Contêiner da logo e nome do site */
 .logo-container {
     display: flex;
     align-items: center;
     margin-right: auto;
 }
 
-/* Estilo da logo */
 .logo {
     height: 40px;
     margin-right: 10px;
 }
 
-/* Estilo do nome do site */
 .site-name {
     font-size: 20px;
     font-weight: bold;
     color: white;
 }
 
-/* Ajustar o menu para se alinhar à direita */
 #nav {
     list-style: none;
     display: flex;
 }
+
 #nav li {
     margin-right: 20px;
     position: relative;
 }
+
 #nav a {
     color: white;
     text-decoration: none;
@@ -96,7 +88,11 @@ nav {
     color: white;
 }
 
-/* Ajustes para o dropdown */
+#menu-toggle {
+    display: none;
+}
+
+/* Menu dropdown */
 .dropdown-content {
     display: none;
     flex-direction: column;
@@ -114,7 +110,6 @@ nav {
     display: block;
 }
 
-/* Para garantir que funcione em dispositivos móveis */
 .dropdown-content a {
     color: white;
     padding: 16px;
@@ -132,36 +127,6 @@ nav {
     display: inline-block;
 }
 
-h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 24px;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-input[type="text"], input[type="email"] {
-    padding: 12px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    width: 100%;
-}
-
-button {
-    padding: 12px 20px;
-    background-color: rgb(50, 205, 50);
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-    display: block;
-    margin: 0 auto;
-    text-align:center;
-}
-
-/* Ajustes de responsividade */
 @media (max-width: 768px) {
     .conteudo {
         flex-direction: column;
@@ -174,3 +139,38 @@ button {
 
     #menu-toggle:checked + .menu-icon + #nav {
         display: flex;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .image-container {
+        display: none;
+    }
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Estilo do botão "Enviar" */
+button[type="submit"] {
+    padding: 12px 20px;
+    background-color: rgb(50, 205, 50);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin: 20px auto 0 auto; /* Centralizado */
+}
+
+button[type="submit"]:hover {
+    background-color: rgb(34, 139, 34); /* Efeito hover */
+}
