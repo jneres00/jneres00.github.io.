@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="styles.css" media="screen" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Indie+Flower&family=Playfair+Display:wght@400..900&display=swap" rel="stylesheet">
     <link rel="shortcut icon" type="image/png" href="./romantic-dinner.png">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
@@ -43,20 +42,63 @@
     </nav>
 
     <div class="conteudo">
-        <!-- Conteúdo da página -->
+        <div class="image-container">
+            <img class="img-esquerda" src="./high-angle-delicious-brazilian-food-composition.png" alt="Imagem Esquerda">
+        </div>
+        
+        <div class="form-container">
+            <form name="signup" method="post" action="#">
+                <h1>Inscreva-se para receber as receitas mais saborosas no seu e-mail</h1>
+                
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" placeholder="Seu nome" required/><br>
+                
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" placeholder="Seu e-mail" required/><br>
+                
+                <p>Escolha os tipos de receita que deseja receber:</p>
+                
+                <div class="checkbox-group">
+                    <input type="checkbox" id="doces" name="receita[]" value="doces">
+                    <label for="doces">Doces</label><br>
+                    
+                    <input type="checkbox" id="salgadas" name="receita[]" value="salgadas">
+                    <label for="salgadas">Salgadas</label><br>
+                    
+                    <input type="checkbox" id="vegetarianas" name="receita[]" value="vegetarianas">
+                    <label for="vegetarianas">Vegetarianas</label><br>
+                    
+                    <input type="checkbox" id="veganas" name="receita[]" value="veganas">
+                    <label for="veganas">Veganas</label><br>
+                    
+                    <input type="checkbox" id="zero-lactose" name="receita[]" value="zero-lactose">
+                    <label for="zero-lactose">Zero Lactose</label><br>
+                    
+                    <input type="checkbox" id="zero-acucar" name="receita[]" value="zero-acucar">
+                    <label for="zero-acucar">Zero Açúcar</label><br>
+                    
+                    <input type="checkbox" id="zero-gluten" name="receita[]" value="zero-gluten">
+                    <label for="zero-gluten">Zero Glúten</label><br>
+                </div>
+                
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+        
+        <div class="image-container">
+            <img class="img-direita" src="./fruit-salad-spilling-floor-was-mess-vibrant-colors-textures-generative-ai.png" alt="Imagem Direita">
+        </div>
     </div>
 
+    <!--Código para enviar emails-->
     <script>
         (function(){
-            emailjs.init("442zngQ219XIPxi3M");
+            emailjs.init("442zngQ219XIPxi3M"); 
         })();
 
         document.querySelector('form[name="signup"]').addEventListener('submit', function(event) {
             event.preventDefault();
-
-            const checkedRecipes = Array.from(document.querySelectorAll('input[name="receita[]"]:checked'))
-                                        .map(input => input.value);
-
+            const checkedRecipes = Array.from(document.querySelectorAll('input[name="receita[]"]:checked')).map(input => input.value);
             const recipesString = checkedRecipes.join(', ');
 
             emailjs.send('service_l4uk9r6', 'template_f74w2dl', {
@@ -65,10 +107,8 @@
                 recipes: recipesString
             })
             .then(function(response) {
-                console.log('Sucesso!', response.status, response.text);
                 alert('Formulário enviado com sucesso!');
             }, function(error) {
-                console.log('Failed...', error);
                 alert('Falha ao enviar o formulário.');
             });
         });
