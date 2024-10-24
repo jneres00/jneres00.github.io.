@@ -20,7 +20,7 @@ body {
     align-items: center;
     gap: 20px;
     padding: 40px;
-    flex-wrap: wrap; /* Faz os elementos quebrarem linha quando necessário */
+    flex-wrap: wrap;
 }
 
 /* Formulário */
@@ -77,7 +77,7 @@ nav {
     list-style: none;
     display: flex;
     position: relative;
-    flex-wrap: wrap; /* Permite o menu quebrar linha em telas menores */
+    flex-wrap: wrap;
 }
 #nav li {
     margin-right: 20px;
@@ -163,6 +163,37 @@ nav {
 
     .site-name {
         font-size: 18px; /* Reduz o tamanho do nome do site em telas menores */
+    }
+}
+
+/* Ajustes para telas ainda menores */
+@media (max-width: 480px) {
+    .conteudo {
+        padding: 10px; /* Reduz o padding em telas muito pequenas */
+    }
+
+    .form-container {
+        padding: 10px; /* Mais ajuste para reduzir o padding */
+    }
+
+    .img-esquerda, .img-direita {
+        margin-bottom: 10px; /* Diminui o espaçamento para imagens */
+    }
+
+    button {
+        width: 100%; /* Botão ocupará toda a largura */
+    }
+
+    input[type="text"], input[type="email"] {
+        font-size: 14px; /* Reduz o tamanho da fonte em telas pequenas */
+    }
+
+    nav {
+        padding: 10px; /* Reduz o padding do menu em telas pequenas */
+    }
+
+    #nav li {
+        margin-right: 0; /* Remove margens laterais dos itens do menu */
     }
 }
 
