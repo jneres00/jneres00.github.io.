@@ -1,3 +1,4 @@
+/* Reset básico */
 * {
     margin: 0;
     padding: 0;
@@ -78,17 +79,32 @@ nav {
     position: relative;
     flex-wrap: wrap; /* Permite o menu quebrar linha em telas menores */
 }
+
 #nav li {
     margin-right: 20px;
     position: relative;
 }
+
 #nav a {
     color: white;
     text-decoration: none;
     padding: 10px;
 }
 
-/* Ajustes para o dropdown */
+/* Menu Sanduíche */
+.menu-icon {
+    display: none; /* Inicialmente escondido */
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+}
+
+/* Estilos para o checkbox que controla o menu sanduíche */
+#menu-toggle {
+    display: none; /* Não exibir o checkbox */
+}
+
+/* Dropdown */
 .dropdown-content {
     display: none;
     flex-direction: column;
@@ -150,6 +166,11 @@ nav {
     #nav {
         flex-direction: column; /* Alinha o menu verticalmente */
         margin-top: 10px;
+        display: none; /* Esconde o menu por padrão */
+    }
+
+    #menu-toggle:checked + .menu-icon + #nav {
+        display: flex; /* Exibe o menu quando o checkbox está marcado */
     }
 
     #nav li {
@@ -162,6 +183,10 @@ nav {
 
     .site-name {
         font-size: 18px; /* Reduz o tamanho do nome do site em telas menores */
+    }
+
+    .menu-icon {
+        display: block; /* Exibe o ícone do menu sanduíche em telas menores */
     }
 }
 
