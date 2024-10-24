@@ -204,11 +204,11 @@ button[type="submit"]:hover {
 .checkbox-group {
     display: flex;
     flex-direction: column;
-    gap: 5px; /* Espaçamento reduzido entre os checkboxes */
+    gap: 2px; /* Espaçamento reduzido entre os checkboxes */
 }
 
 .checkbox-group input[type="checkbox"] {
-    margin-right: 10px; /* Espaçamento à direita dos checkboxes */
+    margin-right: 5px; /* Espaçamento à direita dos checkboxes */
 }
 
 /* Estilo para o mobile */
