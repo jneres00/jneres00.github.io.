@@ -31,7 +31,8 @@ body {
 }
 
 /* Espaçamento entre os campos do formulário */
-form input, form textarea {
+form input,
+form textarea {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px; /* Espaçamento entre os campos */
@@ -48,8 +49,11 @@ form input, form textarea {
     margin-bottom: 20px;
 }
 
-.img-esquerda, .img-direita {
-    max-width: 100%;
+.img-esquerda,
+.img-direita {
+    max-width: 100%; /* Limita a largura máxima */
+    height: auto; /* Mantém a proporção da imagem */
+    max-height: 300px; /* Limita a altura máxima */
     border-radius: 10px;
     margin-bottom: 20px; /* Espaçamento entre as imagens e o formulário */
 }
@@ -200,7 +204,7 @@ button[type="submit"]:hover {
 .checkbox-group {
     display: flex;
     flex-direction: column;
-    gap: 10px; /* Espaçamento entre os checkboxes */
+    gap: 5px; /* Espaçamento reduzido entre os checkboxes */
 }
 
 .checkbox-group input[type="checkbox"] {
