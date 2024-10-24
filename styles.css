@@ -20,6 +20,7 @@ body {
     align-items: center;
     gap: 20px;
     padding: 40px;
+    flex-wrap: wrap; /* Faz os elementos quebrarem linha quando necessário */
 }
 
 /* Formulário */
@@ -30,6 +31,7 @@ body {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     max-width: 600px; /* Limita o tamanho do formulário */
+    width: 100%; /* Garante que o formulário ocupe 100% da largura disponível */
 }
 
 /* Imagens laterais */
@@ -44,30 +46,30 @@ body {
 
 /* Contêiner principal do menu */
 nav {
-    display: flex; /* Garante que logo e menu fiquem na mesma linha */
-    align-items: center; /* Alinha verticalmente logo e menu */
-    padding: 15px 0; /* Apenas o padding vertical para evitar espaço extra */
-    width: 100%; /* Garante que o menu ocupe toda a largura */
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    width: 100%;
 }
 
 /* Contêiner da logo e nome do site */
 .logo-container {
     display: flex;
-    align-items: center; /* Alinha logo e nome do site verticalmente */
-    margin-right: auto; /* Empurra o menu para a direita */
+    align-items: center;
+    margin-right: auto;
 }
 
 /* Estilo da logo */
 .logo {
-    height: 40px; /* Tamanho da logo */
-    margin-right: 10px; /* Espaço entre logo e nome do site */
+    height: 40px;
+    margin-right: 10px;
 }
 
 /* Estilo do nome do site */
 .site-name {
     font-size: 20px;
     font-weight: bold;
-    color: white; /* Mesma cor do menu */
+    color: white;
 }
 
 /* Ajustar o menu para se alinhar à direita */
@@ -75,10 +77,11 @@ nav {
     list-style: none;
     display: flex;
     position: relative;
+    flex-wrap: wrap; /* Permite o menu quebrar linha em telas menores */
 }
 #nav li {
     margin-right: 20px;
-    position: relative; /* Importante para o dropdown */
+    position: relative;
 }
 #nav a {
     color: white;
@@ -88,7 +91,7 @@ nav {
 
 /* Ajustes para o dropdown */
 .dropdown-content {
-    display: none; /* Mudar para 'none' inicialmente */
+    display: none;
     flex-direction: column;
     align-items: center;
     position: absolute;
@@ -96,12 +99,12 @@ nav {
     list-style: none;
     margin: 0;
     padding: 0;
-    z-index: 1000; /* Certifique-se de que está acima de outros elementos */
-    width: 150px; /* Defina uma largura para o dropdown */
+    z-index: 1000;
+    width: 150px;
 }
 
 .dropdown:hover .dropdown-content {
-    display: block; /* Exibir o dropdown ao passar o mouse */
+    display: block;
 }
 
 /* Para garantir que funcione em dispositivos móveis */
@@ -109,16 +112,14 @@ nav {
     color: white;
     padding: 16px;
     width: 100%;
-    text-align: center; /* Isso já está correto */
+    text-align: center;
 }
 
-/* Efeito de hover para os links do dropdown */
 .dropdown-content a:hover {
     background-color: rgb(50, 205, 50);
     border-radius: 5px;
 }
 
-/* Definir o position relativo no item pai */
 #nav .dropdown {
     position: relative;
     display: inline-block;
@@ -129,11 +130,39 @@ nav {
     .conteudo {
         flex-direction: column;
         align-items: center;
+        padding: 20px; /* Reduz o padding em telas menores */
+    }
+
+    .form-container {
+        width: 100%; /* O formulário ocupará toda a largura disponível */
+        padding: 15px; /* Reduz o padding em dispositivos móveis */
     }
 
     .img-esquerda, .img-direita {
         max-width: 100%;
         margin-bottom: 20px;
+    }
+
+    nav {
+        flex-direction: column; /* Torna o menu vertical */
+        align-items: center;
+    }
+
+    #nav {
+        flex-direction: column; /* Alinha o menu verticalmente */
+        margin-top: 10px;
+    }
+
+    #nav li {
+        margin: 10px 0;
+    }
+
+    .logo {
+        height: 30px; /* Reduz o tamanho da logo para telas menores */
+    }
+
+    .site-name {
+        font-size: 18px; /* Reduz o tamanho do nome do site em telas menores */
     }
 }
 
@@ -153,15 +182,14 @@ input[type="text"], input[type="email"] {
 }
 
 button {
-        padding: 12px 20px;
-        background-color: rgb(50, 205, 50);
-        color: white;
-        border: none;
-        cursor: pointer;
-        font-size: 16px;
-        border-radius: 5px;
-        transition: background-color 0.3s ease;
-        display: block; /* Torna o botão um bloco */
-        margin: 0 auto; /* Centraliza o botão */
-    }
-    
+    padding: 12px 20px;
+    background-color: rgb(50, 205, 50);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin: 0 auto;
+}
