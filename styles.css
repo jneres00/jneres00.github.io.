@@ -11,25 +11,25 @@ body {
     line-height: 1.6;
 }
 
-/* Layout principal */
-.container {
+.conteudo {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     gap: 20px;
     padding: 40px;
+    flex-wrap: wrap;
 }
 
-/* Formulário */
 .form-container {
     flex: 1;
     padding: 20px;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
 }
 
-/* Imagens laterais */
 .image-container {
     flex: 0 0 300px;
 }
@@ -39,24 +39,128 @@ body {
     border-radius: 10px;
 }
 
-/* Estilo dos checkboxes */
-.checkbox-group {
-    display: flex;
-    flex-direction: column;
-    margin: 10px 0;
-    gap: 5px; /* Ajuste de espaçamento entre checkboxes */
-}
-
-/* Alinhamento de checkbox e labels */
-.checkbox-group label {
+nav {
     display: flex;
     align-items: center;
+    padding: 15px;
+    width: 100%;
+    background-color: rgb(255, 99, 71);
 }
 
-/* Estilo do botão */
-button {
-    padding: 12px 20px;
+.logo-container {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+}
+
+.logo {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.site-name {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+#nav {
+    list-style: none;
+    display: flex;
+}
+
+#nav li {
+    margin-right: 20px;
+    position: relative;
+}
+
+#nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+/* Menu Sanduíche */
+.menu-icon {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+/* Menu dropdown */
+.dropdown-content {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    text-align: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    z-index: 1000;
+    width: 150px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 16px;
+    width: 100%;
+    text-align: center;
+}
+
+.dropdown-content a:hover {
     background-color: rgb(50, 205, 50);
+    border-radius: 5px;
+}
+
+#nav .dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+@media (max-width: 768px) {
+    .conteudo {
+        flex-direction: column;
+    }
+
+    #nav {
+        flex-direction: column;
+        display: none;
+    }
+
+    #menu-toggle:checked + .menu-icon + #nav {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .image-container {
+        display: none;
+    }
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Estilo do botão "Enviar" */
+button[type="submit"] {
+    padding: 12px 20px;
+    background-color: rgb(34, 139, 34);   
     color: white;
     border: none;
     cursor: pointer;
@@ -64,5 +168,5 @@ button {
     border-radius: 5px;
     transition: background-color 0.3s ease;
     display: block;
-    margin: 20px auto; /* Margem para centralizar */
+    margin: 20px auto 0 auto; /* Centralizado */
 }
