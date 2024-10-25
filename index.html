@@ -14,31 +14,37 @@
     <title>Receitas com Amor</title>
 </head>
 <body>
-    <nav>  <div class="logo-container">
-        <img src="./romantic-dinner.png" alt="Logo" class="logo">
-        <span class="site-name">Receitas com Amor</span>
-    </div>
-    <ul id="nav">
-        <li><a href="#">Página inicial</a></li>
-        <li><a href="#">Sobre</a></li>
-        <li class="dropdown">
-            <a href="#">Receitas</a>
-            <ul class="dropdown-content">
-                <li><a href="#">Doces</a></li>
-                <li><a href="#">Salgadas</a></li>
-                <li><a href="#">Vegetarianas</a></li>
-                <li><a href="#">Veganas</a></li>
-                <li><a href="#">Zero Lactose</a></li>
-                <li><a href="#">Zero Açúcar</a></li>
-                <li><a href="#">Zero Glúten</a></li>
-            </ul>
-        </li>
-        <li><a href="#">Contato</a></li>
-    </ul>
+    <nav>
+        <div class="logo-container">
+            <img src="./romantic-dinner.png" alt="Logo" class="logo">
+            <span class="site-name">Receitas com Amor</span>
+        </div>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <ul id="mobile-nav">
+            <li><a href="#">Página inicial</a></li>
+            <li><a href="#">Sobre</a></li>
+            <li class="dropdown">
+                <a href="#">Receitas</a>
+                <ul class="dropdown-content">
+                    <li><a href="#">Doces</a></li>
+                    <li><a href="#">Salgadas</a></li>
+                    <li><a href="#">Vegetarianas</a></li>
+                    <li><a href="#">Veganas</a></li>
+                    <li><a href="#">Zero Lactose</a></li>
+                    <li><a href="#">Zero Açúcar</a></li>
+                    <li><a href="#">Zero Glúten</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Contato</a></li>
+        </ul>
     </nav>
+
     <div class="conteudo">
         <div class="image-container">
-            <!-- Imagem à esquerda -->
             <img class="img-esquerda" src="./high-angle-delicious-brazilian-food-composition.png" alt="Imagem Esquerda">
         </div>
         
@@ -71,11 +77,9 @@
         </div>
         
         <div class="image-container">
-            <!-- Imagem à direita -->
             <img class="img-direita" src="./fruit-salad-spilling-floor-was-mess-vibrant-colors-textures-generative-ai.png" alt="Imagem Direita">
         </div>
     </div>
-
 
     <script>
         // Inicializar o EmailJS
@@ -108,6 +112,11 @@
                 alert('Falha ao enviar o formulário.'); // Alerta de erro
             });
         });
+
+        function toggleMenu() {
+            const nav = document.getElementById('mobile-nav');
+            nav.classList.toggle('active');
+        }
     </script>
 </body>
 </html>
