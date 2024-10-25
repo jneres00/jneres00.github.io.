@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 /* Estilos do corpo */
 body {
     font-family: 'Montserrat', sans-serif;
@@ -40,13 +46,13 @@ body {
 .checkbox-group {
     display: flex;
     flex-direction: column;
-    gap: 5px; /* Espaçamento ajustado entre os checkboxes */
+    gap: 8px; /* Espaçamento ajustado entre os checkboxes */
     margin: 10px 0; /* Margem vertical para separar do restante do formulário */
 }
 
 /* Estilo para os checkboxes */
 .checkbox-group input[type="checkbox"] {
-    margin-right: 5px; /* Espaçamento à direita dos checkboxes */
+    margin-right: 8px; /* Espaçamento à direita dos checkboxes */
 }
 
 /* Alinhamento dos checkboxes e labels */
@@ -75,7 +81,7 @@ body {
     }
 
     .image-container {
-        display: none;
+        display: none; /* Ocultar as imagens em mobile */
     }
 
     .form-container {
