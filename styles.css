@@ -1,3 +1,4 @@
+/* Reset básico */
 * {
     margin: 0;
     padding: 0;
@@ -16,7 +17,7 @@ body {
 .conteudo {
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Ajuste aqui */
+    align-items: center;
     gap: 20px;
     padding: 40px;
 }
@@ -29,7 +30,6 @@ body {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     max-width: 600px; /* Limita o tamanho do formulário */
-    width: 100%; /* Garante que o formulário ocupe 100% da largura disponível */
 }
 
 /* Imagens laterais */
@@ -42,117 +42,74 @@ body {
     border-radius: 10px;
 }
 
-/* Contêiner principal do menu */
-nav {
-    display: flex;
-    align-items: center;
-    padding: 15px 0;
-    width: 100%;
-}
-
-/* Contêiner da logo e nome do site */
-.logo-container {
-    display: flex;
-    align-items: center;
-    margin-right: auto;
-}
-
-/* Estilo da logo */
-.logo {
-    height: 40px;
-    margin-right: 10px;
-}
-
-/* Estilo do nome do site */
-.site-name {
-    font-size: 20px;
-    font-weight: bold;
-    color: white;
-}
-
-/* Ajustar o menu para se alinhar à direita */
+/* Estilos da navegação */
 #nav {
     list-style: none;
+    padding: 15px;
+    text-align: center;
     display: flex;
+    justify-content: center;
 }
+
 #nav li {
-    margin-right: 20px;
-    position: relative;
+    margin-right: 15px;
 }
+
+#nav li:last-child {
+    margin-right: 0;
+}
+
 #nav a {
     color: white;
+    padding: 12px 25px;
+    display: inline-block;
     text-decoration: none;
-    padding: 10px;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
 }
 
-/* Menu Sanduíche */
-.menu-icon {
-    display: none;
-    font-size: 30px;
-    cursor: pointer;
-    color: white;
+#nav a:hover {
+    background-color: rgb(50, 205, 50);
+    border-radius: 5px;
 }
 
-/* Ajustes para o dropdown */
-.dropdown-content {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-    text-align: center;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    z-index: 1000;
-    width: 150px;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-/* Para garantir que funcione em dispositivos móveis */
-.dropdown-content a {
-    color: white;
-    padding: 16px;
-    width: 100%;
-    text-align: center;
-}
-
-button:hover {
-    background-color: rgb(34, 139, 34);
-}
-
-/* Estilos para as caixas de seleção */
-.checkbox-group {
-    margin: 10px 0;
-}
-
-/* Estilos das caixas de seleção */
-.checkbox-group input[type="checkbox"] {
-    margin-right: 10px;
-}
-
-/* Estilos do rodapé (se você planeja adicionar um) */
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #fff;
-    color: #333;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
-
-/* Responsividade para melhorar a visualização em dispositivos móveis */
+/* Ajustes de responsividade */
 @media (max-width: 768px) {
-    /* Ajustes de espaçamento para telas menores */
     .conteudo {
-        padding: 20px;
+        flex-direction: column;
+        align-items: center;
     }
 
-    /* Tamanho do título no mobile */
-    h1 {
-        font-size: 20px;
+    .img-esquerda, .img-direita {
+        max-width: 100%;
+        margin-bottom: 20px;
     }
 }
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+input[type="text"], input[type="email"] {
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+button {
+    padding: 12px 20px;
+    background-color: rgb(50, 205, 50);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
