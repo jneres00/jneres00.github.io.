@@ -19,10 +19,9 @@
             <span class="site-name">Receitas com Amor</span>
         </div>
 
-        <!-- Menu Sanduíche -->
-        <input type="checkbox" id="menu-toggle">
+        <input type="checkbox" id="menu-toggle" />
         <label for="menu-toggle" class="menu-icon">&#9776;</label>
-
+    
         <ul id="nav">
             <li><a href="#">Página inicial</a></li>
             <li><a href="#">Sobre</a></li>
@@ -52,34 +51,42 @@
                 <h1>Inscreva-se para receber as receitas mais saborosas no seu e-mail</h1>
                 
                 <label for="name">Nome:</label>
-                <input type="text" id="name" name="name" placeholder="Seu nome" required><br>
+                <input type="text" id="name" name="name" placeholder="Seu nome" required/>
                 
                 <label for="email">E-mail:</label>
-                <input type="email" id="email" name="email" placeholder="Seu e-mail" required><br>
+                <input type="email" id="email" name="email" placeholder="Seu e-mail" required/>
                 
                 <p>Escolha os tipos de receita que deseja receber:</p>
                 
                 <div class="checkbox-group">
-                    <input type="checkbox" id="doces" name="receita[]" value="doces">
-                    <label for="doces">Doces</label><br>
-                    
-                    <input type="checkbox" id="salgadas" name="receita[]" value="salgadas">
-                    <label for="salgadas">Salgadas</label><br>
-                    
-                    <input type="checkbox" id="vegetarianas" name="receita[]" value="vegetarianas">
-                    <label for="vegetarianas">Vegetarianas</label><br>
-                    
-                    <input type="checkbox" id="veganas" name="receita[]" value="veganas">
-                    <label for="veganas">Veganas</label><br>
-                    
-                    <input type="checkbox" id="zero-lactose" name="receita[]" value="zero-lactose">
-                    <label for="zero-lactose">Zero Lactose</label><br>
-                    
-                    <input type="checkbox" id="zero-acucar" name="receita[]" value="zero-acucar">
-                    <label for="zero-acucar">Zero Açúcar</label><br>
-                    
-                    <input type="checkbox" id="zero-gluten" name="receita[]" value="zero-gluten">
-                    <label for="zero-gluten">Zero Glúten</label><br>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="doces" name="receita[]" value="doces">
+                        <label for="doces">Doces</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="salgadas" name="receita[]" value="salgadas">
+                        <label for="salgadas">Salgadas</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="vegetarianas" name="receita[]" value="vegetarianas">
+                        <label for="vegetarianas">Vegetarianas</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="veganas" name="receita[]" value="veganas">
+                        <label for="veganas">Veganas</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="zero-lactose" name="receita[]" value="zero-lactose">
+                        <label for="zero-lactose">Zero Lactose</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="zero-acucar" name="receita[]" value="zero-acucar">
+                        <label for="zero-acucar">Zero Açúcar</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="zero-gluten" name="receita[]" value="zero-gluten">
+                        <label for="zero-gluten">Zero Glúten</label>
+                    </div>
                 </div>
                 
                 <button type="submit">Enviar</button>
@@ -91,7 +98,7 @@
         </div>
     </div>
 
-    <!-- Código para enviar emails -->
+    <!--Código para enviar emails-->
     <script>
         (function(){
             emailjs.init("442zngQ219XIPxi3M"); 
