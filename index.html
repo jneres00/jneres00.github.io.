@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,10 +8,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" type="imagex/png" href="./pizza.png">
+    <link rel="shortcut icon" type="image/png" href="./romantic-dinner.png">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
     <title>Receitas com Amor</title>
 </head>
 <body>
+    <nav>  <div class="logo-container">
+        <img src="./romantic-dinner.png" alt="Logo" class="logo">
+        <span class="site-name">Receitas com Amor</span>
+    </div>
     <ul id="nav">
         <li><a href="#">Página inicial</a></li>
         <li><a href="#">Sobre</a></li>
@@ -29,7 +35,7 @@
         </li>
         <li><a href="#">Contato</a></li>
     </ul>
-    
+    </nav>
     <div class="conteudo">
         <div class="image-container">
             <!-- Imagem à esquerda -->
@@ -70,26 +76,36 @@
         </div>
     </div>
 
-    <!--Código para enviar emails-->
+
     <script>
+        // Inicializar o EmailJS
         (function(){
-            emailjs.init("442zngQ219XIPxi3M"); 
+            emailjs.init("6Q18tLxn1YtbrtUis"); // Substitua pelo seu User ID do EmailJS
         })();
 
+        // Adiciona o listener para o evento de submissão do formulário
         document.querySelector('form[name="signup"]').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const checkedRecipes = Array.from(document.querySelectorAll('input[name="receita[]"]:checked')).map(input => input.value);
+            event.preventDefault(); // Impede o envio padrão do formulário
+
+            // Capturar os valores dos checkboxes
+            const checkedRecipes = Array.from(document.querySelectorAll('input[name="receita[]"]:checked'))
+                                        .map(input => input.value);
+
+            // Converter o array em uma string
             const recipesString = checkedRecipes.join(', ');
 
+            // Enviar os dados para o EmailJS
             emailjs.send('service_l4uk9r6', 'template_f74w2dl', {
                 name: document.getElementById('name').value,
                 email: document.getElementById('email').value,
                 recipes: recipesString
             })
             .then(function(response) {
-                alert('Formulário enviado com sucesso!');
+                console.log('Sucesso!', response.status, response.text);
+                alert('Formulário enviado com sucesso!'); // Alerta para o usuário
             }, function(error) {
-                alert('Falha ao enviar o formulário.');
+                console.log('Failed...', error);
+                alert('Falha ao enviar o formulário.'); // Alerta de erro
             });
         });
     </script>
