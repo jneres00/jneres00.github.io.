@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 /* Estilos do corpo */
 body {
     font-family: 'Montserrat', sans-serif;
@@ -10,7 +16,7 @@ body {
 .conteudo {
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Ajuste para alinhar imagens e formulário */
+    align-items: flex-start; /* Ajuste aqui */
     gap: 20px;
     padding: 40px;
 }
@@ -36,77 +42,117 @@ body {
     border-radius: 10px;
 }
 
-/* Contêiner para checkboxes */
-.checkbox-group {
+/* Contêiner principal do menu */
+nav {
     display: flex;
-    flex-direction: column;
-    gap: 5px; /* Espaçamento ajustado entre os checkboxes */
-    margin: 10px 0; /* Margem vertical para separar do restante do formulário */
-}
-
-/* Estilo para os checkboxes */
-.checkbox-group input[type="checkbox"] {
-    margin-right: 5px; /* Espaçamento à direita dos checkboxes */
-}
-
-/* Alinhamento dos checkboxes e labels */
-.checkbox-group label {
-    display: flex;
-    align-items: center; /* Alinha verticalmente os checkboxes e labels */
-}
-
-/* Ajustes de responsividade */
-@media (max-width: 768px) {
-    .conteudo {
-        flex-direction: column;
-    }
-
-    #nav {
-        flex-direction: column;
-        display: none;
-    }
-
-    #menu-toggle:checked + .menu-icon + #nav {
-        display: flex;
-    }
-
-    .menu-icon {
-        display: block;
-    }
-
-    .image-container {
-        display: none;
-    }
-
-    .form-container {
-        width: 100%;
-    }
-}
-
-h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 24px;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-input[type="text"], input[type="email"] {
-    padding: 12px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    align-items: center;
+    padding: 15px 0;
     width: 100%;
 }
 
-button {
-    padding: 12px 20px;
-    background-color: rgb(50, 205, 50);
+/* Contêiner da logo e nome do site */
+.logo-container {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+}
+
+/* Estilo da logo */
+.logo {
+    height: 40px;
+    margin-right: 10px;
+}
+
+/* Estilo do nome do site */
+.site-name {
+    font-size: 20px;
+    font-weight: bold;
     color: white;
-    border: none;
+}
+
+/* Ajustar o menu para se alinhar à direita */
+#nav {
+    list-style: none;
+    display: flex;
+}
+#nav li {
+    margin-right: 20px;
+    position: relative;
+}
+#nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+/* Menu Sanduíche */
+.menu-icon {
+    display: none;
+    font-size: 30px;
     cursor: pointer;
-    font-size: 16px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    color: white;
+}
+
+/* Ajustes para o dropdown */
+.dropdown-content {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    text-align: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    z-index: 1000;
+    width: 150px;
+}
+
+.dropdown:hover .dropdown-content {
     display: block;
-    margin: 20px auto; /* Margem vertical para separar do restante */
+}
+
+/* Para garantir que funcione em dispositivos móveis */
+.dropdown-content a {
+    color: white;
+    padding: 16px;
+    width: 100%;
+    text-align: center;
+}
+
+button:hover {
+    background-color: rgb(34, 139, 34);
+}
+
+/* Estilos para as caixas de seleção */
+.checkbox-group {
+    margin: 10px 0;
+}
+
+/* Estilos das caixas de seleção */
+.checkbox-group input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+/* Estilos do rodapé (se você planeja adicionar um) */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    color: #333;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsividade para melhorar a visualização em dispositivos móveis */
+@media (max-width: 768px) {
+    /* Ajustes de espaçamento para telas menores */
+    .conteudo {
+        padding: 20px;
+    }
+
+    /* Tamanho do título no mobile */
+    h1 {
+        font-size: 20px;
+    }
 }
